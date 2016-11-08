@@ -1,4 +1,4 @@
-package eaextracredit;
+package eaextracredit.domain;
 
 import java.util.ArrayList;
 import java.util.Date;

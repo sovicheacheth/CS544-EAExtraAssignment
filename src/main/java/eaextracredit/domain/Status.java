@@ -1,4 +1,4 @@
-package eaextracredit;
+package eaextracredit.domain;
 
 /**
  * 
