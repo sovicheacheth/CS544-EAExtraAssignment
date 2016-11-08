@@ -22,16 +22,13 @@ public class MainApp {
 
 	static {
 		try {
+			//Class c = Class.forName("org.hibernate.javax.PersistenceProvider");
 			em = Persistence.createEntityManagerFactory("cs544_extra");
 		} catch (Throwable e) {
 			// TODO: handle exception
 			e.printStackTrace();
 			throw new ExceptionInInitializerError();
 		}
-	}
-
-	public static void main(String[] args) {
-
 	}
 
 	private static void createProject() {
@@ -97,6 +94,11 @@ public class MainApp {
 				em.close();
 			}
 		}
+	}
+
+	public static void main(String[] args) {
+		createProject();
+		em.close();
 	}
 
 }
