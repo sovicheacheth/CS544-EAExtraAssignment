@@ -1,6 +1,7 @@
 package eaextracredit;
 
 import javax.persistence.Entity;
+import javax.persistence.DiscriminatorValue;
 
 /**
  * 
@@ -13,8 +14,8 @@ import javax.persistence.Entity;
 
 
 @Entity
-@DiscrimatorValue("Admin")
-public class Administrator {
+@DiscriminatorValue("Admin")
+public class Administrator extends User{
 	
 	
 
