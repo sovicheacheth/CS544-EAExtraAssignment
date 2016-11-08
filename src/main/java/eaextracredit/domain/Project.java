@@ -23,27 +23,27 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Project {
-	
+
 	@Id
 	@GeneratedValue
 	private int id;
 	private String description;
-	
+
 	@Temporal(TemporalType.DATE)
 	private Date expectedStartDate;
-	
+
 	@Temporal(TemporalType.DATE)
 	private Date expectedEndDate;
-	
-	@OneToMany(mappedBy="project")
-	private List<Task> task = new ArrayList<Task>();
+
+	@OneToMany(mappedBy = "project")
+	private List<Task> tasks = new ArrayList<Task>();
 
 	@ManyToOne
 	private User administrator;
-	
+
 	@Enumerated
 	private Status status;
-	
+
 	private String location;
 
 	public int getId() {
@@ -79,11 +79,11 @@ public class Project {
 	}
 
 	public List<Task> getTask() {
-		return task;
+		return tasks;
 	}
 
 	public void setTask(List<Task> task) {
-		this.task = task;
+		this.tasks = task;
 	}
 
 	public User getAdministrator() {
@@ -109,7 +109,16 @@ public class Project {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	
-	
-	
+
+	public void addTask(Task task) {
+		tasks.add(task);
+		task.setProject(this);
+
+	}
+
+	public void removeTask(Task task) {
+		task.setProject(null);
+		tasks.remove(task);
+	}
+
 }
