@@ -15,6 +15,14 @@ import eaextracredit.domain.Status;
 import eaextracredit.domain.Task;
 import eaextracredit.domain.Volunteer;
 
+/**
+ * 
+ * @author Sovichea Cheth
+ * @id 985421
+ * @date 11-07-2016
+ *
+ */
+
 public class MainApp {
 
 	private static EntityManagerFactory em;
@@ -22,7 +30,8 @@ public class MainApp {
 
 	static {
 		try {
-			//Class c = Class.forName("org.hibernate.javax.PersistenceProvider");
+			// Class c =
+			// Class.forName("org.hibernate.javax.PersistenceProvider");
 			em = Persistence.createEntityManagerFactory("cs544_extra");
 		} catch (Throwable e) {
 			// TODO: handle exception
